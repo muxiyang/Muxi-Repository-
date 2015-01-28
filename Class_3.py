@@ -71,9 +71,45 @@ list4= range(100,105) # range (n,m) gives a list from #n to m-1
 
 list4 # a series of numbers starting from 100 to 104
 list5 = range(5)# range(n) gives list from 0 to m-1
-list 6=['q','r','s','t','u'] 
+list6=['q','r','s','t','u'] 
 
 ## list to series 
 s1=Series(list4)  ## turn a list (horizontal) into a column with index
 s2=Series(list6)
+
+## create DataFrame from lists OR series 
+zip(list4,list6)
+list7= range(60,65)
+zip(list4,list6,list7)
+
+zip1=zip(list4,list6,list7)
+df1=DataFrame(zip1)
+#extract the first column--> df1[0]
+
+df2=DataFrame(zip1,columns=['two','apple',':)'])
+#extract the column "two"--> df2['two']
+
+df3= DataFrame(zip1,columns=[2,'2',':)'])
+#summary: extract the column, df3[what ever in the line above (include all '')]
+#the 2,'2' ';)' are called keys. they can be numbers or any notation
+
+df3[2] # reference column with key (str) '2'
+df3[3:4] # slice out row 3 
+
+df3[['2',':)']][3:4] #get only column '2' and smile face & then get row 3 
+
+## make dataframe using dict notation 
+df4 = DataFrame ({':(' : list4, 9: list6}) 
+#':(" is the key for list4 and 9 is the key for list 6
+# the order of the columns is determined by the nature of the key 
+# numbers comes before letters, before notations 
+
+dict1={':(' : list4, 9: list6}
+
+## Stack two DataFrame
+s1=Series(list4)
+s2=Series(list6)
+df5= pd.concat([s1,s2])
+
+
 
