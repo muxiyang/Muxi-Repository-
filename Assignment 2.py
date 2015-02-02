@@ -15,30 +15,30 @@ df.head(10)
 df.tail (10)
 
 missing=['.','NA','NULL',' ','-']
-df= pd.read_csv(os.path.join(main_dir,csv_file),na_values=missing)
-df.head(10)
+df1= pd.read_csv(os.path.join(main_dir,csv_file),na_values=missing)
+df1.head(10)
 
 #2
-df.duplicated()
-df.drop_duplicates ()
+df1.drop_duplicates 
 
 #3
-df.isnull()
-df['consump'].isnull()
-rows=df['consump'].isnull()
-df[rows]
+df1.isnull()
+df1['consump'].isnull()
+rows=df1['consump'].isnull()
+df1[rows]
+
+df2=df1[rows]
 
 #4
-df.duplicated(subset=['panid','date'])
-t_b=df.duplicated()
-b_t=df.duplicated(take_last=True)
+df1.duplicated(subset=['panid','date'])
+t_b=df1.duplicated()
+b_t=df1.duplicated(take_last=True)
 
-df1=df[t_b]
-
-df1. dropna (axis=0, how='any')
+df3=df1[t_b]
+df4=df3. dropna (axis=0, how='any')
 
 #5
-df['consump'].mean()
+df4['consump'].mean()
 
 
 
