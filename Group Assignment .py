@@ -34,14 +34,13 @@ pd.isnull(df1).any(1).nonzero()[0]
 ## confirm NaN
 
 # DUPLICATED DATA
-
-df5[df5.mid==5707].time
-diff(df5[df5.mid==5707].time)
-Out[22]==0
-sum(Out[22]==0)
-temp=list(set(df5.mid))
-for cur_mid in temp:
-    aaa=diff(df5[df5.mid==cur_mid].time)
-    if aaa=0  # get rid of aaa=0
     
 b.drop_duplicates(['mid','time'],take_last=1) #? kept one of the duplicates? 
+
+# Dropping row values 
+df1=df.copy()
+df1.drop(range(0,9),inplace=True)
+
+#Change row values 
+
+df.['kwh'][if a number is more than 49]=NaN
