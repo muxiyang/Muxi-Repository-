@@ -33,7 +33,18 @@ df=pd.merge(df,df_assign)
 
 #splitting by assignment 
 groups1=df.groupby(['assignment'])  #just group by assignment, don't care about time, same as collapse in STATA
-groups1.groups    # result is a index (dictionary) of treatment and control group 
+groups1.groups    # result is a index (dictionary) of treatment and control group separate
+#don't do group1.groups with big data, it will crash 
+
+gd1=groups1.groups #define a dictionary 
+
+#Peak inside dictionary 
+gd1.keys() #the C and T keys 
+gd1.values ()  # this is a list of index , can use numerical index 
+gd1.values()[0] #0 is C, 1 is T
+gd1['C'] #gd1 is a dictionary, so must use keys to get data 
+gd1.viewvalues() #See all possible values of gd1 dictionary 
+
 
 #apply the mean 
 groups1['kwh'].apply(np.mean)   #cannot see the things in the groups1, just calaculate the mean 
